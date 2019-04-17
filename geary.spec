@@ -22,6 +22,7 @@ BuildRequires:  meson
 BuildRequires:	xml2po
 BuildRequires:	pkgconfig(enchant)
 BuildRequires:  pkgconfig(enchant-2)
+BuildRequires:  pkgconfig(folks)
 BuildRequires:	pkgconfig(gcr-3)
 BuildRequires:	pkgconfig(gee-0.8)
 BuildRequires:	pkgconfig(gmime-2.6)
