@@ -63,7 +63,7 @@ features in a modular way.
 %apply_patches
 
 %build
-%meson -Denable-tnef-support=false
+%meson -Dtnef-support=false
 %meson_build
 
 %install
