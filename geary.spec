@@ -43,6 +43,7 @@ BuildRequires:	pkgconfig(sqlite3)
 BuildRequires:	pkgconfig(vapigen)
 BuildRequires:	pkgconfig(webkit2gtk-4.0)
 BuildRequires:	pkgconfig(webkit2gtk-web-extension-4.0)
+BuildRequires:  libytnef-devel
 Requires:	hicolor-icon-theme
 Requires: gsettings-desktop-schemas
 
