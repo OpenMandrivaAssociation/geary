@@ -5,7 +5,7 @@
 
 Name:		geary
 Version:	3.34.0
-Release:	1
+Release:	2
 Summary:	A lightweight email program designed around conversations
 License:	LGPLv2+
 Group:		Networking/Mail
@@ -35,6 +35,7 @@ BuildRequires:  pkgconfig(iso-codes)
 BuildRequires:	pkgconfig(javascriptcoregtk-4.0)
 BuildRequires:  pkgconfig(json-glib-1.0)
 BuildRequires:	pkgconfig(libcanberra)
+BuildRequires:  pkgconfig(libhandy-0.0)
 BuildRequires:	pkgconfig(libnotify)
 BuildRequires:	pkgconfig(libsecret-1)
 BuildRequires:	pkgconfig(libsoup-2.4)
@@ -81,14 +82,3 @@ features in a modular way.
 %{_datadir}/icons/hicolor/*/actions/*.*
 %{_datadir}/metainfo/org.gnome.Geary.appdata.xml
 %{_libdir}/%{name}/
-
-#-----
-# After LX 4.1, remember to fix mess with libhandy... Create own package and remove this bundled crap from various g packages.  
-%{_includedir}/libhandy-0.0/*
-%{_libdir}/libhandy-0.0.so*
-%{_libdir}/girepository-1.0/Handy-0.0.typelib
-%{_libdir}/pkgconfig/libhandy-0.0.pc
-%{_datadir}/dbus-1/services/org.gnome.Geary.service
-%{_datadir}/gir-1.0/Handy-0.0.gir
-%{_datadir}/vala/vapi/libhandy-0.0.deps
-%{_datadir}/vala/vapi/libhandy-0.0.vapi
