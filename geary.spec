@@ -61,7 +61,7 @@ features in a modular way.
 
 %prep
 %setup -q
-%apply_patches
+%autopatch -p1
 
 %build
 %meson -Dtnef-support=false
