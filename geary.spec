@@ -47,6 +47,7 @@ BuildRequires:	pkgconfig(webkit2gtk-4.0)
 BuildRequires:	pkgconfig(webkit2gtk-web-extension-4.0)
 BuildRequires:  pkgconfig(libpeas-1.0)
 BuildRequires:  libytnef-devel
+BuildRequires:  typelib(GMime)
 Requires:	hicolor-icon-theme
 Requires: gsettings-desktop-schemas
 
