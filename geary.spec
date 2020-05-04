@@ -85,5 +85,5 @@ features in a modular way.
 %{_datadir}/icons/hicolor/*/actions/*.*
 %{_datadir}/metainfo/org.gnome.Geary.appdata.xml
 %{_libdir}/%{name}/
-%{_libdir}/libgeary-client.so
+#{_libdir}/libgeary-client.so
 %{_datadir}/dbus-1/services/org.gnome.Geary.service
