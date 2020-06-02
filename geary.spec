@@ -1,7 +1,7 @@
 %define url_ver	%(echo %{version}|cut -d. -f1,2)
 
 # filter out plugins from provides
-%global __provides_exclude_from %{_libdir}/%{name}/.*\\.so
+#global __provides_exclude_from %{_libdir}/%{name}/.*\\.so
 
 Name:		geary
 Version:	3.36.2
