@@ -11,6 +11,7 @@ License:	LGPLv2+
 Group:		Networking/Mail
 URL:		https://wiki.gnome.org/Apps/Geary
 Source0:	https://download.gnome.org/sources/%{name}/%{url_ver}/%{name}-%{version}.tar.xz
+Patch0:		geary-3.36.2-no-unnecessary-libunwind-generic-check.patch
 
 BuildRequires:	cmake
 BuildRequires:	gettext
@@ -41,7 +42,6 @@ BuildRequires:	pkgconfig(libnotify)
 BuildRequires:	pkgconfig(libsecret-1)
 BuildRequires:	pkgconfig(libsoup-2.4)
 BuildRequires:  pkgconfig(libunwind)
-BuildRequires:  pkgconfig(libunwind-generic)
 BuildRequires:	pkgconfig(sqlite3)
 BuildRequires:	pkgconfig(vapigen)
 BuildRequires:	pkgconfig(webkit2gtk-4.0)
@@ -64,8 +64,7 @@ architecture so that developers will be able to add all kinds of nifty
 features in a modular way.
 
 %prep
-%setup -q
-%autopatch -p1
+%autosetup -p1
 
 %build
 %meson -Dtnef-support=false
