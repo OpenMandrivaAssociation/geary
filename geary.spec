@@ -7,7 +7,7 @@
 #global __provides_exclude_from %{_libdir}/%{name}/.*\\.so
 
 Name:		geary
-Version:	3.38.0.1
+Version:	3.38.1
 Release:	1
 Summary:	A lightweight email program designed around conversations
 License:	LGPLv2+
