@@ -4,13 +4,13 @@
 #global __provides_exclude_from %{_libdir}/%{name}/.*\\.so
 
 Name:		geary
-Version:	3.36.2
-Release:	1
+Version:	40
+Release:	0.alpha
 Summary:	A lightweight email program designed around conversations
 License:	LGPLv2+
 Group:		Networking/Mail
 URL:		https://wiki.gnome.org/Apps/Geary
-Source0:	https://download.gnome.org/sources/%{name}/%{url_ver}/%{name}-%{version}.tar.xz
+Source0:	https://download.gnome.org/sources/%{name}/%{url_ver}/%{name}-%{version}.alpha.tar.xz
 Patch0:		geary-3.36.2-no-unnecessary-libunwind-generic-check.patch
 
 BuildRequires:	cmake
@@ -64,7 +64,7 @@ architecture so that developers will be able to add all kinds of nifty
 features in a modular way.
 
 %prep
-%autosetup -p1
+%autosetup -n -p1 %{name}-%{version}.alpha
 
 %build
 %meson -Dtnef-support=false
