@@ -67,7 +67,9 @@ features in a modular way.
 %autosetup -n %{name}-%{version}.alpha
 
 %build
-%meson -Dtnef-support=false
+%meson  \ 
+        -Dtnef-support=false \
+        -Dprofile=release
 %meson_build
 
 %install
