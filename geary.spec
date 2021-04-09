@@ -13,6 +13,7 @@ URL:		https://wiki.gnome.org/Apps/Geary
 Source0:	https://download.gnome.org/sources/%{name}/%{url_ver}/%{name}-%{version}.alpha.tar.xz
 #Patch0:		geary-3.36.2-no-unnecessary-libunwind-generic-check.patch
 
+BuildRequires:  appstream-util
 BuildRequires:	cmake
 BuildRequires:	gettext
 BuildRequires:	gnome-doc-utils
@@ -45,6 +46,7 @@ BuildRequires:	pkgconfig(libsoup-2.4)
 BuildRequires:  pkgconfig(libunwind)
 BuildRequires:	pkgconfig(sqlite3)
 BuildRequires:	pkgconfig(vapigen)
+BuildRequires:  pkgconfig(valadoc-0.52)
 BuildRequires:	pkgconfig(webkit2gtk-4.0)
 BuildRequires:	pkgconfig(webkit2gtk-web-extension-4.0)
 BuildRequires:  pkgconfig(libpeas-1.0)
