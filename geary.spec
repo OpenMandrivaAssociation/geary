@@ -22,6 +22,7 @@ BuildRequires:	iso-codes
 BuildRequires:  itstool
 BuildRequires:  meson
 BuildRequires:	xml2po
+BuildRequires:  valadoc
 BuildRequires:  pkgconfig(appstream-glib)
 BuildRequires:	pkgconfig(enchant)
 BuildRequires:  pkgconfig(enchant-2)
