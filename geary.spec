@@ -71,7 +71,7 @@ features in a modular way.
 %build
 %meson  \
         -Dprofile=release \
-        -Dtnef=false
+        -Dtnef=disabled
 %meson_build
 
 %install
