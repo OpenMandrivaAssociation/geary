@@ -11,7 +11,7 @@ License:	LGPLv2+
 Group:		Networking/Mail
 URL:		https://wiki.gnome.org/Apps/Geary
 Source0:	https://download.gnome.org/sources/%{name}/%{url_ver}/%{name}-%{version}.alpha.tar.xz
-Patch0:		geary-3.36.2-no-unnecessary-libunwind-generic-check.patch
+#Patch0:		geary-3.36.2-no-unnecessary-libunwind-generic-check.patch
 
 BuildRequires:	cmake
 BuildRequires:	gettext
