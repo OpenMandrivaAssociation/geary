@@ -64,7 +64,7 @@ architecture so that developers will be able to add all kinds of nifty
 features in a modular way.
 
 %prep
-%autosetup -n -p1 %{name}-%{version}.alpha
+%autosetup -n %{name}-%{version}.alpha
 
 %build
 %meson -Dtnef-support=false
