@@ -4,13 +4,13 @@
 #global __provides_exclude_from %{_libdir}/%{name}/.*\\.so
 
 Name:		geary
-Version:	40
-Release:	0.rc
+Version:	40.0
+Release:	1
 Summary:	A lightweight email program designed around conversations
 License:	LGPLv2+
 Group:		Networking/Mail
 URL:		https://wiki.gnome.org/Apps/Geary
-Source0:	https://download.gnome.org/sources/%{name}/%{url_ver}/%{name}-%{version}.rc.tar.xz
+Source0:	https://download.gnome.org/sources/%{name}/%{url_ver}/%{name}-%{version}.tar.xz
 #Patch0:		geary-3.36.2-no-unnecessary-libunwind-generic-check.patch
 
 BuildRequires:  appstream-util
@@ -69,7 +69,7 @@ architecture so that developers will be able to add all kinds of nifty
 features in a modular way.
 
 %prep
-%autosetup -n %{name}-%{version}.rc
+%autosetup -n %{name}-%{version}
 
 %build
 %meson  \
