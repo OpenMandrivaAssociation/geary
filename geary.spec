@@ -12,6 +12,8 @@ Group:		Networking/Mail
 URL:		https://wiki.gnome.org/Apps/Geary
 Source0:	https://download.gnome.org/sources/%{name}/%{url_ver}/%{name}-%{version}.tar.xz
 #Patch0:		geary-3.36.2-no-unnecessary-libunwind-generic-check.patch
+#R ROSA patch
+Patch0:         geary-40.0-libstemmer-include-path.patch
 
 BuildRequires:  appstream-util
 BuildRequires:	cmake
@@ -68,7 +70,7 @@ architecture so that developers will be able to add all kinds of nifty
 features in a modular way.
 
 %prep
-%autosetup -n %{name}-%{version}
+%autosetup -n %{name}-%{version} -p1
 
 %build
 %meson  \
