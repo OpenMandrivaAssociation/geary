@@ -1,0 +1,50 @@
+diff -ur geary-40.0/bindings/vapi/libstemmer.vapi geary-40.0_patched/bindings/vapi/libstemmer.vapi
+--- geary-40.0/bindings/vapi/libstemmer.vapi	2021-04-23 06:57:02.898114000 +0300
++++ geary-40.0_patched/bindings/vapi/libstemmer.vapi	2021-06-28 10:51:51.525313925 +0300
+@@ -24,7 +24,7 @@
+  * SUCH DAMAGE.
+  */
+ 
+-[CCode (cheader_filename = "libstemmer.h", lower_case_cprefix = "sb_", cprefix="sb_")]
++[CCode (cheader_filename = "libstemmer/libstemmer.h", lower_case_cprefix = "sb_", cprefix="sb_")]
+ namespace SnowBall {
+ 	[Compact]
+ 	[CCode (cname = "struct sb_stemmer", free_function="sb_stemmer_delete")]
+@@ -35,4 +35,4 @@
+ 		[CCode (array_length = false, array_null_terminated = true)]
+ 		public static unowned string[] list();
+ 	}
+-}
+\ В конце файла нет новой строки
++}
+diff -ur geary-40.0/org.gnome.Geary.json geary-40.0_patched/org.gnome.Geary.json
+--- geary-40.0/org.gnome.Geary.json	2021-04-23 06:57:02.910114000 +0300
++++ geary-40.0_patched/org.gnome.Geary.json	2021-06-28 10:49:42.449703652 +0300
+@@ -267,7 +267,7 @@
+             ],
+             "build-commands": [
+                 "make libstemmer.so -j$FLATPAK_BUILDER_N_JOBS",
+-                "install -Dm644 include/libstemmer.h /app/include/libstemmer.h",
++                "install -Dm644 include/libstemmer/libstemmer.h /app/include/libstemmer.h",
+                 "install -Dm644 libstemmer.so.0.0.0 /app/lib/libstemmer.so.0.0.0",
+                 "ln -s libstemmer.so.0.0.0 /app/lib/libstemmer.so.0",
+                 "ln -s libstemmer.so.0 /app/lib/libstemmer.so"
+@@ -298,4 +298,4 @@
+             ]
+         }
+     ]
+-}
+\ В конце файла нет новой строки
++}
+diff -ur geary-40.0/org.gnome.Geary.yaml geary-40.0_patched/org.gnome.Geary.yaml
+--- geary-40.0/org.gnome.Geary.yaml	2021-04-23 06:57:02.914114000 +0300
++++ geary-40.0_patched/org.gnome.Geary.yaml	2021-06-28 10:49:42.449703652 +0300
+@@ -256,7 +256,7 @@
+           - build-aux/patches/shared-library.diff
+     build-commands:
+       - "make libstemmer.so -j$FLATPAK_BUILDER_N_JOBS"
+-      - "install -Dm644 include/libstemmer.h /app/include/libstemmer.h"
++      - "install -Dm644 include/libstemmer/libstemmer.h /app/include/libstemmer.h"
+       - "install -Dm644 libstemmer.so.0.0.0 /app/lib/libstemmer.so.0.0.0"
+       - "ln -s libstemmer.so.0.0.0 /app/lib/libstemmer.so.0"
+       - "ln -s libstemmer.so.0 /app/lib/libstemmer.so"
