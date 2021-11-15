@@ -46,7 +46,7 @@ BuildRequires:  pkgconfig(libhandy-1)
 BuildRequires:	pkgconfig(libnotify)
 BuildRequires:	pkgconfig(libsecret-1)
 BuildRequires:	pkgconfig(libsoup-2.4)
-#BuildRequires:  pkgconfig(libunwind)
+BuildRequires:  pkgconfig(libunwind)
 BuildRequires:	pkgconfig(sqlite3)
 BuildRequires:	pkgconfig(vapigen)
 BuildRequires:	pkgconfig(webkit2gtk-4.0)
@@ -73,6 +73,8 @@ features in a modular way.
 %autosetup -n %{name}-%{version} -p1
 
 %build
+export CC=gcc
+export CXX=g++
 %meson  \
         -Dprofile=release \
         -Dtnef=disabled
