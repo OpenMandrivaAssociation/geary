@@ -1,17 +1,18 @@
 %define url_ver	%(echo %{version}|cut -d. -f1,2)
+%define _empty_manifest_terminate_build 0
 
 # filter out plugins from provides
 #global __provides_exclude_from %{_libdir}/%{name}/.*\\.so
 
 Name:		geary
-Version:	3.36.2
+Version:	40.0
 Release:	1
 Summary:	A lightweight email program designed around conversations
 License:	LGPLv2+
 Group:		Networking/Mail
 URL:		https://wiki.gnome.org/Apps/Geary
 Source0:	https://download.gnome.org/sources/%{name}/%{url_ver}/%{name}-%{version}.tar.xz
-Patch0:		geary-3.36.2-no-unnecessary-libunwind-generic-check.patch
+Patch0:		fix-libunwind-missing-symbol.patch
 
 BuildRequires:	cmake
 BuildRequires:	gettext
@@ -37,20 +38,23 @@ BuildRequires:  pkgconfig(iso-codes)
 BuildRequires:	pkgconfig(javascriptcoregtk-4.0)
 BuildRequires:  pkgconfig(json-glib-1.0)
 BuildRequires:	pkgconfig(libcanberra)
-BuildRequires:  pkgconfig(libhandy-0.0)
+BuildRequires:  pkgconfig(libhandy-1)
 BuildRequires:	pkgconfig(libnotify)
 BuildRequires:	pkgconfig(libsecret-1)
 BuildRequires:	pkgconfig(libsoup-2.4)
-BuildRequires:  pkgconfig(libunwind)
+BuildRequires:	pkgconfig(valadoc-0.54)
+BuildRequires:	libstemmer-devel
 BuildRequires:	pkgconfig(sqlite3)
 BuildRequires:	pkgconfig(vapigen)
 BuildRequires:	pkgconfig(webkit2gtk-4.0)
 BuildRequires:	pkgconfig(webkit2gtk-web-extension-4.0)
 BuildRequires:  pkgconfig(libpeas-1.0)
+BuildRequires:	pkgconfig(gsound)
 BuildRequires:  libytnef-devel
 BuildRequires:  typelib(GMime)
+BuildRequires:	valadoc
 Requires:	hicolor-icon-theme
-Requires: gsettings-desktop-schemas
+Requires: 	gsettings-desktop-schemas
 
 %description
 Geary is a new email reader for GNOME designed to let you read your email
@@ -67,7 +71,7 @@ features in a modular way.
 %autosetup -p1
 
 %build
-%meson -Dtnef-support=false
+%meson -Dprofile=release -Dtnef=disabled -Dc_args=-I/usr/include/libstemmer
 %meson_build
 
 %install
@@ -76,7 +80,7 @@ features in a modular way.
 %find_lang %{name} --with-gnome
 
 %files -f %{name}.lang
-%doc AUTHORS NEWS README THANKS COPYING
+%doc AUTHORS NEWS README.md THANKS COPYING
 %{_bindir}/%{name}*
 %{_datadir}/%{name}/
 %{_datadir}/applications/*.desktop
