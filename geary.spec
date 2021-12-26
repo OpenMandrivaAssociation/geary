@@ -42,6 +42,7 @@ BuildRequires:  pkgconfig(libhandy-1)
 BuildRequires:	pkgconfig(libnotify)
 BuildRequires:	pkgconfig(libsecret-1)
 BuildRequires:	pkgconfig(libsoup-2.4)
+BuildRequires:  pkgconfig(libunwind-llvm)
 BuildRequires:	pkgconfig(valadoc-0.54)
 BuildRequires:	libstemmer-devel
 BuildRequires:	pkgconfig(sqlite3)
