@@ -12,7 +12,7 @@ License:	LGPLv2+
 Group:		Networking/Mail
 URL:		https://wiki.gnome.org/Apps/Geary
 Source0:	https://download.gnome.org/sources/%{name}/%{url_ver}/%{name}-%{version}.tar.xz
-#Patch0:		fix-libunwind-missing-symbol.patch
+Patch0:		fix-libunwind-missing-symbol.patch
 # Fix accessibility issues with initializer of constants
 #Patch1:   9bd4c829.patch
 
@@ -45,7 +45,7 @@ BuildRequires:	pkgconfig(libnotify)
 BuildRequires:	pkgconfig(libsecret-1)
 BuildRequires:	pkgconfig(libsoup-2.4)
 BuildRequires:  pkgconfig(libunwind-llvm)
-BuildRequires:  pkgconfig(libunwind)
+#BuildRequires:  pkgconfig(libunwind)
 BuildRequires:	libstemmer-devel
 BuildRequires:	pkgconfig(sqlite3)
 BuildRequires:	pkgconfig(vapigen)
@@ -72,8 +72,6 @@ features in a modular way.
 %autosetup -p1
 
 %build
-export CC=gcc
-export CXX=g++
 %meson -Dprofile=release -Dtnef=disabled -Dc_args=-I/usr/include/libstemmer
 %meson_build
 
