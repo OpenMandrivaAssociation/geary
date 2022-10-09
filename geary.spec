@@ -72,6 +72,8 @@ features in a modular way.
 %autosetup -p1
 
 %build
+export CC=gcc
+export CXX=g++
 %meson -Dprofile=release -Dtnef=disabled -Dc_args=-I/usr/include/libstemmer
 %meson_build
 
