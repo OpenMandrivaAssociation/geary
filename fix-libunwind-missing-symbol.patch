@@ -1,20 +1,19 @@
-diff --git a/meson.build b/meson.build
-index d0af9ee..cfbaadc 100644
---- a/meson.build
-+++ b/meson.build
-@@ -97,10 +97,7 @@ libsecret = dependency('libsecret-1', version: '>= 0.11')
+diff -uraN geary-43.0/meson.build omv-geary-43.0/meson.build
+--- geary-43.0/meson.build	2022-09-29 22:52:54.000000000 +0200
++++ omv-geary-43.0/meson.build	2022-10-09 17:40:50.808639530 +0200
+@@ -96,10 +96,7 @@
+ libsoup = dependency('libsoup-3.0')
  libstemmer_dep = cc.find_library('stemmer')
- libsoup = dependency('libsoup-2.4', version: '>= 2.48')
  libunwind_dep = dependency(
 -  'libunwind', version: '>= 1.1', required: get_option('libunwind')
 -)
 -libunwind_generic_dep = dependency(
 -  'libunwind-generic', version: '>= 1.1', required: get_option('libunwind')
-+  'libunwind-llvm', version: '>= 1.1', required: get_option('libunwind')
++'libunwind-llvm', version: '>= 1.1', required: get_option('libunwind')
  )
  libxml = dependency('libxml-2.0', version: '>= 2.7.8')
  libytnef = dependency('libytnef', version: '>= 1.9.3', required: get_option('tnef'))
-@@ -126,7 +123,6 @@ if libunwind_dep.found()
+@@ -125,7 +122,6 @@
       dependencies: [
         valac.find_library('libunwind', dirs: [vapi_dir, unwind_lib]),
         cc.find_library('libunwind', dirs: unwind_lib),
