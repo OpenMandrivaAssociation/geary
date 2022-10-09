@@ -45,6 +45,7 @@ BuildRequires:	pkgconfig(libnotify)
 BuildRequires:	pkgconfig(libsecret-1)
 BuildRequires:	pkgconfig(libsoup-2.4)
 BuildRequires:  pkgconfig(libunwind-llvm)
+BuildRequires:  pkgconfig(libunwind)
 BuildRequires:	libstemmer-devel
 BuildRequires:	pkgconfig(sqlite3)
 BuildRequires:	pkgconfig(vapigen)
