@@ -1,4 +1,5 @@
 %global optflags %{optflags} -Wno-incompatible-function-pointer-types
+%global optflags %{optflags} -Wno-error -Wno-implicit-function-declaration
 
 %define url_ver	%(echo %{version}|cut -d. -f1,2)
 %define _empty_manifest_terminate_build 0
