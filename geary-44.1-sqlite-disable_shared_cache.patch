@@ -1,0 +1,16 @@
+--- geary-44.1/src/engine/db/db.vala.orig	2024-02-22 23:25:30.580487789 +0000
++++ geary-44.1/src/engine/db/db.vala	2024-02-22 23:25:36.590318127 +0000
+@@ -77,13 +77,6 @@
+     return Sqlite.libversion_number();
+ }
+ 
+-/**
+- * See [[http://www.sqlite.org/c3ref/enable_shared_cache.html]]
+- */
+-public bool set_shared_cache_mode(bool enabled) {
+-    return sqlite3_enable_shared_cache(enabled ? 1 : 0) == Sqlite.OK;
+-}
+-
+ /** Standard transformation for case-insensitive string values. */
+ public inline string normalise_case_insensitive_query(string text) {
+     // This would be a place to do transliteration to improve query

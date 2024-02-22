@@ -1,5 +1,6 @@
 %define url_ver	%(echo %{version}|cut -d. -f1)
 %define _empty_manifest_terminate_build 0
+%define _disable_lto 1
 
 # filter out plugins from provides
 #global __provides_exclude_from %{_libdir}/%{name}/.*\\.so
@@ -13,6 +14,7 @@ Group:		Networking/Mail
 URL:		https://wiki.gnome.org/Apps/Geary
 Source0:	https://download.gnome.org/sources/%{name}/%{url_ver}/%{name}-%{version}.tar.xz
 Patch0:		fix-libunwind-missing-symbol.patch
+Patch1:		geary-44.1-sqlite-disable_shared_cache.patch
 
 BuildRequires:	cmake
 BuildRequires:	gettext
@@ -23,7 +25,6 @@ BuildRequires:  itstool
 BuildRequires:  meson
 BuildRequires:	xml2po
 BuildRequires:  pkgconfig(appstream-glib)
-BuildRequires:	pkgconfig(enchant)
 BuildRequires:  pkgconfig(enchant-2)
 BuildRequires:  pkgconfig(folks)
 BuildRequires:	pkgconfig(gcr-3)
@@ -71,6 +72,7 @@ features in a modular way.
 %autosetup -p1
 
 %build
+export CC="clang -Wno-int-conversion -Wno-incompatible-function-pointer-types"
 %meson -Dprofile=release -Dtnef=disabled -Dc_args=-I/usr/include/libstemmer
 %meson_build
 
