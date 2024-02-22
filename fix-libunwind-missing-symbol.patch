@@ -3,8 +3,8 @@ index d0af9ee..cfbaadc 100644
 --- a/meson.build
 +++ b/meson.build
 @@ -97,10 +97,7 @@ libsecret = dependency('libsecret-1', version: '>= 0.11')
+ libsoup = dependency('libsoup-3.0')
  libstemmer_dep = cc.find_library('stemmer')
- libsoup = dependency('libsoup-2.4', version: '>= 2.48')
  libunwind_dep = dependency(
 -  'libunwind', version: '>= 1.1', required: get_option('libunwind')
 -)
