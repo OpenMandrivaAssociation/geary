@@ -1,12 +1,12 @@
-%define url_ver	%(echo %{version}|cut -d. -f1,2)
+%define url_ver	%(echo %{version}|cut -d. -f1)
 %define _empty_manifest_terminate_build 0
 
 # filter out plugins from provides
 #global __provides_exclude_from %{_libdir}/%{name}/.*\\.so
 
 Name:		geary
-Version:	40.0
-Release:	4
+Version:	44.1
+Release:	1
 Summary:	A lightweight email program designed around conversations
 License:	LGPLv2+
 Group:		Networking/Mail
