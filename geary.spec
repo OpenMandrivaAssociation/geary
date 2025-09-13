@@ -17,6 +17,7 @@ Patch0:		fix-libunwind-missing-symbol.patch
 Patch1:		geary-44.1-sqlite-disable_shared_cache.patch
 
 BuildRequires:	cmake
+BuildRequires:  desktop-file-utils
 BuildRequires:	gettext
 BuildRequires:	gnome-doc-utils
 BuildRequires:	intltool
