@@ -7,7 +7,7 @@
 
 Name:		geary
 Version:	46.0
-Release:	7
+Release:	8
 Summary:	A lightweight email program designed around conversations
 License:	LGPLv2+
 Group:		Networking/Mail
